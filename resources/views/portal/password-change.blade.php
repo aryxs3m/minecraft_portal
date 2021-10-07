@@ -1,9 +1,5 @@
 @extends('layouts.portal')
 
-@push('head')
-    <link rel="stylesheet" href="/assets/styles/minecraft-skinviewer.css">
-@endpush
-
 @section('content')
     <x-portal-header name="{{ __('menu.passwordchange') }}"></x-portal-header>
 
