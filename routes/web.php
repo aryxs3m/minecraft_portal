@@ -14,5 +14,25 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    if (\Illuminate\Support\Facades\Auth::check())
+    {
+        return redirect()->to('/home');
+    }
+    else
+    {
+        return redirect()->to('/login');
+    }
+});
+
+Route::get('/login', [\App\Http\Controllers\Auth\AuthController::class, 'loginForm'])->name("login");
+Route::post('/login', [\App\Http\Controllers\Auth\AuthController::class, 'loginPost']);
+
+Route::middleware('auth')->group(function(){
+    Route::get('/home', [\App\Http\Controllers\Portal\DashboardController::class, 'index']);
+
+    Route::get('/skin', [\App\Http\Controllers\Portal\SkinController::class, 'skin']);
+    Route::post('/skin', [\App\Http\Controllers\Portal\SkinController::class, 'skinSave']);
+
+    Route::get('/password-change', [\App\Http\Controllers\Portal\PasswordController::class, 'passwordChange']);
+    Route::post('/password-change', [\App\Http\Controllers\Portal\PasswordController::class, 'passwordChangePost']);
 });
