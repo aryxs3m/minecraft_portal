@@ -5,7 +5,7 @@
 @endpush
 
 @section('content')
-    <x-portal-header name="Jelszócsere"></x-portal-header>
+    <x-portal-header name="{{ __('menu.passwordchange') }}"></x-portal-header>
 
     @if ($errors->any())
         <div class="alert alert-danger text-start">
@@ -19,7 +19,7 @@
 
     @if(session('success'))
         <p class="alert alert-success mb-3">
-            Sikeres jelszócsere!
+            {{ __('frontend.passwordchange.successful') }}
         </p>
     @endif
 
@@ -29,15 +29,15 @@
                 @csrf
 
                 <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Új jelszó</label>
+                    <label for="exampleInputPassword1" class="form-label">{{ __('frontend.passwordchange.new_password') }}</label>
                     <input type="password" class="form-control" id="exampleInputPassword1" name="password">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputPassword2" class="form-label">Új jelszó újra</label>
+                    <label for="exampleInputPassword2" class="form-label">{{ __('frontend.passwordchange.new_password_again') }}</label>
                     <input type="password" class="form-control" id="exampleInputPassword2" name="password_confirmation">
                 </div>
 
-                <button type="submit" class="btn btn-primary">Mentés</button>
+                <button type="submit" class="btn btn-primary">{{ __('frontend.save') }}</button>
             </form>
         </div>
     </div>

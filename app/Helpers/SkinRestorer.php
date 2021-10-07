@@ -17,7 +17,7 @@ abstract class SkinRestorer
         $transformedName = ' ' . $username;
 
         if(empty($mineSkinResponse['data']['texture']['value']) || empty($mineSkinResponse['data']['texture']['signature'])){
-            throw new \Exception("A MineSkin érvénytelen választ adott vissza. Kérlek próbáld később!");
+            throw new \Exception(__('frontend.skinchange.error_mineskin'));
         }
 
         $value = $mineSkinResponse['data']['texture']['value'];

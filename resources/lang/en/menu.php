@@ -13,14 +13,8 @@ return [
     |
     */
 
-    'failed' => 'These credentials do not match our records.',
-    'password' => 'The provided password is incorrect.',
-    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
-    'log_in' => 'Log in!',
-    'login' => 'Login',
-    'logout' => 'Logout',
-    'fields' => [
-        'username' => 'Username',
-        'password' => 'Password'
-    ]
+    'home' => 'Home',
+    'skinchange' => 'Change skin',
+    'passwordchange' => 'Change password'
+
 ];

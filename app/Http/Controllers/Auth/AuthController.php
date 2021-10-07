@@ -36,7 +36,7 @@ class AuthController
         }
         else
         {
-            return redirect()->back()->with('error', 'Helytelen felhasználónév vagy jelszó!');
+            return redirect()->back()->with('error', __('auth.failed'));
         }
     }
 }

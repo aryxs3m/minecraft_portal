@@ -30,7 +30,7 @@ abstract class MineSkinUploader
         $response = curl_exec($ch);
         curl_close($ch);
         if($response == false){
-            throw new \Exception("Hiba történt a Skin feltöltése során!");
+            throw new \Exception(__('frontend.skinchange.error_upload'));
         }
 
         return json_decode($response, true);

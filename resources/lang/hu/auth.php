@@ -13,14 +13,14 @@ return [
     |
     */
 
-    'failed' => 'These credentials do not match our records.',
-    'password' => 'The provided password is incorrect.',
-    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
-    'log_in' => 'Log in!',
-    'login' => 'Login',
-    'logout' => 'Logout',
+    'failed' => 'A megadott bejelentkezési adatok nem megfelelőek.',
+    'password' => 'A megadott jelszó hibás.',
+    'throttle' => 'Túl sok próbálkozás érkezett. Próbáld újra :seconds másodperc múlva.',
+    'log_in' => 'Jelentkezz be!',
+    'login' => 'Bejelentkezés',
+    'logout' => 'Kilépés',
     'fields' => [
-        'username' => 'Username',
-        'password' => 'Password'
+        'username' => 'Felhasználó',
+        'password' => 'Jelszó'
     ]
 ];

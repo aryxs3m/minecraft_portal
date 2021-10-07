@@ -1,7 +1,7 @@
 @extends('layouts.portal')
 
 @section('content')
-    <x-portal-header name="Főoldal"></x-portal-header>
+    <x-portal-header name="{{ __('menu.home') }}"></x-portal-header>
 
     <div class="card mb-3">
         <div class="card-body">
@@ -11,14 +11,14 @@
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
                 @if($serverInfo->online)
-                    <span class="text-success">Online</span>
+                    <span class="text-success">{{ __('frontend.home.online') }}</span>
                 @else
-                    <span class="text-danger">Offline</span>
+                    <span class="text-danger">{{ __('frontend.home.offline') }}</span>
                 @endif
             </li>
             <li class="list-group-item">{{ $serverInfo->version }}</li>
-            <li class="list-group-item">{{ $serverInfo->players }} / {{ $serverInfo->max_players }} játékos</li>
-            <li class="list-group-item">{{ $serverInfo->ping }} ms ping</li>
+            <li class="list-group-item">{{ $serverInfo->players }} / {{ $serverInfo->max_players }} {{ __('frontend.home.players') }}</li>
+            <li class="list-group-item">{{ $serverInfo->ping }} ms {{ __('frontend.home.ping') }}</li>
         </ul>
     </div>
 
@@ -29,12 +29,12 @@
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
                 @if($user->isLogged)
-                    <span class="text-success">Most játszik</span>
+                    <span class="text-success">{{ __('frontend.home.now_playing') }}</span>
                 @else
-                    <span class="text-danger">Offline</span>
+                    <span class="text-danger">{{ __('frontend.home.offline') }}</span>
                 @endif
             </li>
-            <li class="list-group-item">Utolsó IP cím: <strong>{{ $user->ip }}</strong></li>
+            <li class="list-group-item">{{ __('frontend.home.last_ip') }}: <strong>{{ $user->ip }}</strong></li>
         </ul>
     </div>
 @endsection
