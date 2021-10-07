@@ -28,6 +28,11 @@ Route::get('/login', [\App\Http\Controllers\Auth\AuthController::class, 'loginFo
 Route::post('/login', [\App\Http\Controllers\Auth\AuthController::class, 'loginPost']);
 
 Route::middleware('auth')->group(function(){
+    Route::get('/logout', function (){
+        \Illuminate\Support\Facades\Auth::logout();
+        return redirect()->to('/login');
+    });
+
     Route::get('/home', [\App\Http\Controllers\Portal\DashboardController::class, 'index']);
 
     Route::get('/skin', [\App\Http\Controllers\Portal\SkinController::class, 'skin']);
