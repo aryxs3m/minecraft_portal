@@ -6,15 +6,17 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
+        "ext-curl": "*",
+        "ext-json": "*",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.54",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "lukasss93/minecraft-server-status": "^2.0",
-        "thedudeguy/rcon": "^1.0",
-      "ext-json": "*",
-      "ext-curl": "*"
+        "mehradsadeghi/laravel-crud-generator": "^0.5.4",
+        "spatie/laravel-permission": "^5.1",
+        "thedudeguy/rcon": "^1.0"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

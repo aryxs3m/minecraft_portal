@@ -26,31 +26,68 @@
                             <a class="nav-link" aria-current="page" href="/home">
                                 {{ __('menu.home') }}
                             </a>
+                            @can('user.skin.change')
                             <a class="nav-link" aria-current="page" href="/skin">
                                 {{ __('menu.skinchange') }}
                             </a>
+                            @endcan
                             <a class="nav-link" aria-current="page" href="/password-change">
                                 {{ __('menu.passwordchange') }}
                             </a>
                         </li>
                     </ul>
 
-                    {{--
+                    @canany('admin.players.list','admin.rcon.simple','admin.rcon.expert','admin.users.manage_roles','admin.users.roles.edit','admin.rcon.edit_simple')
                     <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-                        <span>Linkek</span>
+                        <span>{{ __('menu.groups.admin') }}</span>
                     </h6>
                     <ul class="nav flex-column mb-2">
+                        @can('admin.players.list')
                         <li class="nav-item">
-                            <a class="nav-link" href="https://minecraft.net">Minecraft.net</a>
+                            <a class="nav-link" aria-current="page" href="/admin/players">
+                                {{ __('menu.admin.players') }}
+                            </a>
                         </li>
+                        @endcan
+                        @can('admin.rcon.simple')
                         <li class="nav-item">
-                            <a class="nav-link" href="https://optifine.net">Optifine</a>
+                            <a class="nav-link" aria-current="page" href="/admin/rcon-simple">
+                                {{ __('menu.admin.rcon_simple') }}
+                            </a>
                         </li>
+                        @endcan
+                        {{--
+                        @can('admin.rcon.expert')
                         <li class="nav-item">
-                            <a class="nav-link" href="https://www.johnsmithlegacy.co.uk">John Smith Legacy</a>
+                            <a class="nav-link" aria-current="page" href="/admin/rcon-expert">
+                                {{ __('menu.admin.rcon_expert') }}
+                            </a>
                         </li>
+                        @endcan
+                        @can('admin.users.manage_roles')
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/admin/users/manage_roles">
+                                {{ __('menu.admin.manage_roles') }}
+                            </a>
+                        </li>
+                        @endcan
+                        @can('admin.users.roles.edit')
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/admin/roles">
+                                {{ __('menu.admin.roles_edit') }}
+                            </a>
+                        </li>
+                        @endcan
+                        --}}
+                        @can('admin.rcon.edit_simple')
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/admin/rcon-edit-simple">
+                                {{ __('menu.admin.rcon_edit_simple') }}
+                            </a>
+                        </li>
+                        @endcan
                     </ul>
-                    --}}
+                    @endcanany
                 </div>
             </nav>
 

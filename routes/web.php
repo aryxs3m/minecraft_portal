@@ -40,4 +40,29 @@ Route::middleware('auth')->group(function(){
 
     Route::get('/password-change', [\App\Http\Controllers\Portal\PasswordController::class, 'passwordChange']);
     Route::post('/password-change', [\App\Http\Controllers\Portal\PasswordController::class, 'passwordChangePost']);
+
+    Route::prefix("/admin")->group(function(){
+
+        Route::prefix('/players')->group(function(){
+            Route::get('/', [\App\Http\Controllers\Admin\PlayerController::class, 'index']);
+            Route::get('/create', [\App\Http\Controllers\Admin\PlayerController::class, 'create']);
+            Route::get('/edit/{authMeUser}', [\App\Http\Controllers\Admin\PlayerController::class, 'edit']);
+            Route::post('/update/{authMeUser}', [\App\Http\Controllers\Admin\PlayerController::class, 'update']);
+            Route::post('/store', [\App\Http\Controllers\Admin\PlayerController::class, 'store']);
+            Route::post('/destroy/{authMeUser}', [\App\Http\Controllers\Admin\PlayerController::class, 'destroy']);
+        });
+
+        Route::prefix('/rcon-edit-simple')->group(function(){
+            Route::get('/', [\App\Http\Controllers\Admin\RCONEditController::class, 'index']);
+            Route::get('/create', [\App\Http\Controllers\Admin\RCONEditController::class, 'create']);
+            Route::get('/edit/{simpleRCONElement}', [\App\Http\Controllers\Admin\RCONEditController::class, 'edit']);
+            Route::post('/update/{simpleRCONElement}', [\App\Http\Controllers\Admin\RCONEditController::class, 'update']);
+            Route::post('/store', [\App\Http\Controllers\Admin\RCONEditController::class, 'store']);
+            Route::post('/destroy/{simpleRCONElement}', [\App\Http\Controllers\Admin\RCONEditController::class, 'destroy']);
+        });
+
+        Route::get('/rcon-simple', [\App\Http\Controllers\Admin\SimpleRCONController::class, 'index']);
+        Route::post('/rcon-simple/command', [\App\Http\Controllers\Admin\SimpleRCONController::class, 'send']);
+        Route::post('/rcon-simple/kick', [\App\Http\Controllers\Admin\SimpleRCONController::class, 'kick']);
+    });
 });

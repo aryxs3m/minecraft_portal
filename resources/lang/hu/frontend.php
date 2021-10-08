@@ -33,5 +33,23 @@ return [
         'slim' => 'Slim',
         'error_upload' => 'A skin feltöltése során hiba történt. Próbálkozz később!',
         'error_mineskin' => 'A MineSkin jelenleg nem elérhető. Próbálkozz később!'
+    ],
+
+    'admin' => [
+    'create' => 'Új',
+    'edit' => 'Szerkeszt',
+    'delete' => 'Töröl',
+    'send' => 'Küldés',
+    'edit_rcon_command' => 'RCON parancs szerkesztése',
+    'fields' => [
+        'realname' => 'Valós név',
+        'email' => 'E-mail',
+        'command' => 'Parancs'
+    ],
+    'simple_rcon' => [
+        'commands' => 'Parancsok',
+        'kick' => 'Kirúgás',
+        'manage_commands' => 'Parancsok kezelése'
     ]
+]
 ];

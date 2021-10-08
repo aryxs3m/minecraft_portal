@@ -15,6 +15,16 @@ return [
 
     'home' => 'Home',
     'skinchange' => 'Change skin',
-    'passwordchange' => 'Change password'
+    'passwordchange' => 'Change password',
+    'admin' => [
+        'players' => 'Players',
+        'rcon_simple' => 'RCON (Simple)',
+        'rcon_expert' => 'RCON (Expert)',
+        'rcon_edit_simple' => 'Edit Simple RCON',
+        'manage_roles' => 'Manage Roles',
+    ],
+    'groups' => [
+        'admin' => 'Admin'
+    ]
 
 ];

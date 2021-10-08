@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Spatie\Permission\Traits\HasRoles;
 
 class AuthMeUser extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, HasRoles;
 
     protected $table = "authme";
 
@@ -22,6 +23,7 @@ class AuthMeUser extends Authenticatable
         'username',
         'email',
         'password',
+        'realname'
     ];
 
     /**

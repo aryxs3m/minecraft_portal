@@ -15,6 +15,16 @@ return [
 
     'home' => 'Főoldal',
     'skinchange' => 'Skincsere',
-    'passwordchange' => 'Jelszócsere'
+    'passwordchange' => 'Jelszócsere',
+    'admin' => [
+        'players' => 'Játékosok',
+        'rcon_simple' => 'RCON (Egyszerűsített)',
+        'rcon_expert' => 'RCON (Haladó)',
+        'rcon_edit_simple' => 'Egyszerűsített RCON beállítások',
+        'manage_roles' => 'Szerepkörök kezelése',
+    ],
+    'groups' => [
+        'admin' => 'Admin'
+    ]
 
 ];

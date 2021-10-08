@@ -2,19 +2,26 @@
 
 Laravel 8 web application for your users and OPs.
 
+![Screenshot](screenshot.png)
+
 ## Current Features 
 - AuthMe authentication, password change
 - SkinRestorer skin changer
 - Server status page
 - Server status API endpoint for integrating to your homepage
+- Permission system (guest/admin)
+- Player administration
+- Simple RCON with pre-defined commands and to kick players
 - Multilingual (english and hungarian, easily translatable)
 
 ## Planned Features
+- **Checking permissions on backend**
 - AuthMe registration support
 - Open/invite link only registration support
-- Support for multiple permissions/roles
-- User administration
-- Basic server administration via RCON
+- Permission management
+- Expert RCON terminal
+- Logging for Models and sent RCON commands
+- Web installer/updater
 
 
 ## How To Use
@@ -24,6 +31,11 @@ Laravel 8 web application for your users and OPs.
 - copy `.env.exampe` to `.env`
 - edit `.env` (check below)
 - `php artisan key:gen`
+- `php artisan migrate`
+
+At the beginning, every user is guest, and only have access to skin change and password change.
+
+To give your user an admin role, execute this command: `php artisan mcp:add_admin yourusername`
 
 ## .env Settings
 
@@ -48,9 +60,9 @@ Extra settings:
 | Key | Description |
 | --- | ----------- |
 | MINECRAFT_QUERY_PORT | Your Minecraft server's port |
-| MINECRAFT_RCON_PORT | RCON port, currently not used |
-| MINECRAFT_RCON_PASSWORD | RCON password, currently not used |
-| MINECRAFT_RCON_TIMEOUT | RCON timeout, currently not used |
+| MINECRAFT_RCON_PORT | RCON port |
+| MINECRAFT_RCON_PASSWORD | RCON password |
+| MINECRAFT_RCON_TIMEOUT | RCON timeout |
 
 ## Thanks for checking this out!
 
