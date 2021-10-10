@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 use MCServerStatus\MCPing;
 use Thedudeguy\Rcon;
@@ -27,6 +28,12 @@ class MinecraftService
         if ($rcon->connect())
         {
             $rcon->sendCommand($command);
+            if (Auth::check()) {
+                activity()
+                    ->useLog("rcon")
+                    ->causedBy(Auth::user())
+                    ->log('RCON sent: ' . $command);
+            }
             return trim($rcon->getResponse());
         }
         else

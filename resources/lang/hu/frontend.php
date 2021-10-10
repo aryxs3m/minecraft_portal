@@ -41,10 +41,15 @@ return [
     'delete' => 'Töröl',
     'send' => 'Küldés',
     'edit_rcon_command' => 'RCON parancs szerkesztése',
+    'edit-roles' => 'Jogok',
+    'roles' => 'Szerepkörök',
+    'permissions' => 'Jogosultásgok',
     'fields' => [
-        'realname' => 'Valós név',
         'email' => 'E-mail',
         'command' => 'Parancs'
+    ],
+    'players' => [
+        'invite' => 'Meghívás'
     ],
     'simple_rcon' => [
         'commands' => 'Parancsok',

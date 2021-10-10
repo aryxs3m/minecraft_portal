@@ -6,21 +6,19 @@ Laravel 8 web application for your users and OPs.
 
 ## Current Features 
 - AuthMe authentication, password change
+- Registration or invitation link only registration
 - SkinRestorer skin changer
 - Server status page
 - Server status API endpoint for integrating to your homepage
 - Permission system (guest/admin)
 - Player administration
+- Assign roles/permission to users
 - Simple RCON with pre-defined commands and to kick players
+- Logging for Models and sent RCON commands
 - Multilingual (english and hungarian, easily translatable)
 
 ## Planned Features
-- **Checking permissions on backend**
-- AuthMe registration support
-- Open/invite link only registration support
-- Permission management
 - Expert RCON terminal
-- Logging for Models and sent RCON commands
 - Web installer/updater
 
 

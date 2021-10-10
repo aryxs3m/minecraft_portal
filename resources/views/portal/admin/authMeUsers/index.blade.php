@@ -5,7 +5,16 @@
 @section('content')
     <x-portal-header name="{{ __('menu.admin.players') }}"></x-portal-header>
 
-    <a href="/admin/players/create" class="btn btn-primary mb-3">{{ __('frontend.admin.create') }}</a>
+    <div class="mb-3">
+        @can('admin.players.create')
+        <a href="/admin/players/create" class="btn btn-primary">{{ __('frontend.admin.create') }}</a>
+        @endcan
+
+        @can('admin.players.invite')
+        <form action="/admin/players/invite" method="post">@csrf
+            <button class="btn btn-success">{{ __('frontend.admin.players.invite') }}</button></form>
+        @endcan
+    </div>
 
     @include('includes.crud-messages')
 
@@ -33,9 +42,16 @@
                     @endif
                 </td>
                 <td class="text-end">
+                    @can('admin.players.modify')
                     <a href="/admin/players/edit/{{ $item->id }}" class="btn btn-primary btn-sm">{{ __('frontend.admin.edit') }}</a>
+                    @endcan
+                    @can('admin.users.manage_roles')
+                    <a href="/admin/players/edit-roles/{{ $item->id }}" class="btn btn-warning btn-sm">{{ __('frontend.admin.edit-roles') }}</a>
+                    @endcan
+                    @can('admin.players.delete')
                     <form action="/admin/players/destroy/{{ $item->id }}" method="post">@csrf
                         <button class="btn btn-danger btn-sm">{{ __('frontend.admin.delete') }}</button></form>
+                    @endcan
                 </td>
             </tr>
         @endforeach

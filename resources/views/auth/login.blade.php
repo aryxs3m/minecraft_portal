@@ -34,6 +34,11 @@
         </div>
 
         <button class="w-100 btn btn-lg btn-primary" type="submit">{{ __('auth.login') }}</button>
+
+        @if(config('app.open_registration'))
+            <a class="w-100 btn btn-lg btn-secondary mt-2" href="/register">{{ __('auth.register') }}</a>
+        @endif
+
         <p class="mt-5 mb-3 text-muted">{{ config('app.name') }} &mdash; {{ Date('Y') }}</p>
     </form>
 </main>

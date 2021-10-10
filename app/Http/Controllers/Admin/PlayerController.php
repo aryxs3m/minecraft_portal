@@ -6,6 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Models\AuthMeUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Str;
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 
 class PlayerController extends Controller
 {
@@ -19,6 +23,12 @@ class PlayerController extends Controller
         $authMeUsers = AuthMeUser::all();
 
         return view('portal.admin.authMeUsers.index', compact('authMeUsers'));
+    }
+
+    public function invite()
+    {
+        $tempURL = URL::temporarySignedRoute('invite', now()->addDay());
+        return redirect()->back()->with('message', $tempURL);
     }
 
     /**
@@ -91,6 +101,53 @@ class PlayerController extends Controller
         ]);
 
         $authMeUser->update($validated);
+
+        return back()->with('message', 'item updated successfully');
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\AuthMeUser $authMeUser
+     * @return \Illuminate\Http\Response
+     */
+    public function editRoles(AuthMeUser $authMeUser)
+    {
+        $roles = Role::all();
+        $userRoles = $authMeUser->getRoleNames()->toArray();
+
+        $permissions = Permission::all();
+        $userPermissions = $authMeUser->getPermissionNames()->toArray();
+        return view('portal.admin.authMeUsers.edit-roles', compact('authMeUser', 'roles', 'userRoles', 'permissions', 'userPermissions'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request $request
+     * @param  \App\Models\AuthMeUser $authMeUser
+     * @return \Illuminate\Http\Response
+     */
+    public function updateRoles(Request $request, AuthMeUser $authMeUser)
+    {
+        $roles = [];
+        $permissions = [];
+
+        foreach($request->all() as $key => $value)
+        {
+            if (Str::startsWith($key, 'role_'))
+            {
+                $roles[] = $value;
+            }
+
+            if (Str::startsWith($key, 'permission_'))
+            {
+                $permissions[] = $value;
+            }
+        }
+
+        $authMeUser->syncRoles($roles);
+        $authMeUser->syncPermissions($permissions);
 
         return back()->with('message', 'item updated successfully');
     }

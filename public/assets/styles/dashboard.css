@@ -98,3 +98,10 @@ body {
     border-color: transparent;
     box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
 }
+
+#sidebarMenu .nav-item {
+    transition: 0.2s all;
+}
+#sidebarMenu .nav-item:hover {
+    background: #ddd;
+}

@@ -26,10 +26,14 @@
                             <a class="nav-link" aria-current="page" href="/home">
                                 {{ __('menu.home') }}
                             </a>
+                        </li>
+                        <li class="nav-item">
                             @can('user.skin.change')
                             <a class="nav-link" aria-current="page" href="/skin">
                                 {{ __('menu.skinchange') }}
                             </a>
+                        </li>
+                        <li class="nav-item">
                             @endcan
                             <a class="nav-link" aria-current="page" href="/password-change">
                                 {{ __('menu.passwordchange') }}
@@ -37,7 +41,7 @@
                         </li>
                     </ul>
 
-                    @canany('admin.players.list','admin.rcon.simple','admin.rcon.expert','admin.users.manage_roles','admin.users.roles.edit','admin.rcon.edit_simple')
+                    @canany('admin.players.list','admin.rcon.simple','admin.rcon.expert','admin.users.manage_roles','admin.users.roles.edit','admin.rcon.edit_simple','admin.logs')
                     <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
                         <span>{{ __('menu.groups.admin') }}</span>
                     </h6>
@@ -83,6 +87,13 @@
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="/admin/rcon-edit-simple">
                                 {{ __('menu.admin.rcon_edit_simple') }}
+                            </a>
+                        </li>
+                        @endcan
+                        @can('admin.logs')
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/admin/logs">
+                                {{ __('menu.admin.logs') }}
                             </a>
                         </li>
                         @endcan

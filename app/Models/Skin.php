@@ -4,9 +4,12 @@ namespace App\Models;
 
 use App\Models\SkinModels\SkinData;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Activitylog\Traits\LogsActivity;
 
 class Skin extends Model
 {
+    use LogsActivity;
+
     public $incrementing = false;
     public $timestamps = false;
 

@@ -19,8 +19,13 @@ return [
     'log_in' => 'Log in!',
     'login' => 'Login',
     'logout' => 'Logout',
+    'register' => 'Register',
+    'registration' => 'Registration',
+    'open_registration_disabled' => 'This server does not allow registrations.',
     'fields' => [
         'username' => 'Username',
-        'password' => 'Password'
+        'password' => 'Password',
+        'password_again' => 'Password again',
+        'realname' => 'Real Name',
     ]
 ];

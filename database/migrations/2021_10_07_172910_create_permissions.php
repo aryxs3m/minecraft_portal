@@ -25,14 +25,12 @@ class CreatePermissions extends Migration
         Permission::create(['name' => 'admin.players.modify']);
         Permission::create(['name' => 'admin.players.delete']);
         Permission::create(['name' => 'admin.players.invite']);
-        Permission::create(['name' => 'admin.players.change_registration_settings']);
 
         Permission::create(['name' => 'admin.rcon.simple']);
         Permission::create(['name' => 'admin.rcon.expert']);
         Permission::create(['name' => 'admin.rcon.edit_simple']);
 
         Permission::create(['name' => 'admin.users.manage_roles']);
-        Permission::create(['name' => 'admin.roles.edit']);
 
         $userRole->givePermissionTo(['user.skin.change']);
         $adminRole->givePermissionTo(Permission::all());

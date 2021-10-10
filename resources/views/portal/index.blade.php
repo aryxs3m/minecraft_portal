@@ -9,16 +9,14 @@
             <p class="card-text"><strong>{{ config('minecraft.server') }}:{{ config('minecraft.query_port') }}</strong></p>
         </div>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item">
-                @if($serverInfo->online)
-                    <span class="text-success">{{ __('frontend.home.online') }}</span>
-                @else
-                    <span class="text-danger">{{ __('frontend.home.offline') }}</span>
-                @endif
-            </li>
+            @if($serverInfo->online)
+            <li class="list-group-item"><span class="text-success">{{ __('frontend.home.online') }}</span></li>
             <li class="list-group-item">{{ $serverInfo->version }}</li>
             <li class="list-group-item">{{ $serverInfo->players }} / {{ $serverInfo->max_players }} {{ __('frontend.home.players') }}</li>
             <li class="list-group-item">{{ $serverInfo->ping }} ms {{ __('frontend.home.ping') }}</li>
+            @else
+            <li class="list-group-item"><span class="text-danger">{{ __('frontend.home.offline') }}</span></li>
+            @endif
         </ul>
     </div>
 

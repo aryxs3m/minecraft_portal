@@ -41,15 +41,24 @@ return [
         'delete' => 'Delete',
         'send' => 'Send',
         'edit_rcon_command' => 'Edit RCON Command',
+        'edit-roles' => 'Roles',
+        'roles' => 'Roles',
+        'permissions' => 'Permissions',
         'fields' => [
-            'realname' => 'Real Name',
             'email' => 'E-mail',
             'command' => 'Command'
+        ],
+        'players' => [
+            'invite' => 'Invite'
         ],
         'simple_rcon' => [
             'commands' => 'Commands',
             'kick' => 'Kick',
             'manage_commands' => 'Manage Commands'
         ]
+    ],
+
+    'permissions' => [
+        'user.skin.change' => 'Skincsere'
     ]
 ];

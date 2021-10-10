@@ -22,6 +22,7 @@ return [
         'rcon_expert' => 'RCON (Haladó)',
         'rcon_edit_simple' => 'Egyszerűsített RCON beállítások',
         'manage_roles' => 'Szerepkörök kezelése',
+        'logs' => 'Naplók'
     ],
     'groups' => [
         'admin' => 'Admin'

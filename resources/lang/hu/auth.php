@@ -19,8 +19,13 @@ return [
     'log_in' => 'Jelentkezz be!',
     'login' => 'Bejelentkezés',
     'logout' => 'Kilépés',
+    'register' => 'Regisztráció',
+    'registration' => 'Regisztráció',
+    'open_registration_disabled' => 'Ez a szerver jelenleg nem fogad regisztrációkat.',
     'fields' => [
         'username' => 'Felhasználó',
-        'password' => 'Jelszó'
+        'password' => 'Jelszó',
+        'password_again' => 'Jelszó újra',
+        'realname' => 'Valódi név',
     ]
 ];

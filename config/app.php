@@ -231,4 +231,6 @@ return [
 
     ],
 
+    'open_registration' => env('APP_OPEN_REGISTRATION', false)
+
 ];
