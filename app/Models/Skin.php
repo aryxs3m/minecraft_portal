@@ -8,7 +8,6 @@ use Spatie\Activitylog\Traits\LogsActivity;
 
 class Skin extends Model
 {
-    use LogsActivity;
 
     public $incrementing = false;
     public $timestamps = false;
