@@ -18,8 +18,9 @@ return [
     'passwordchange' => 'Change password',
     'admin' => [
         'players' => 'Players',
+        'rcon' => 'RCON',
         'rcon_simple' => 'RCON (Simple)',
-        'rcon_expert' => 'RCON (Expert)',
+        'rcon_expert' => 'RCON Terminal',
         'rcon_edit_simple' => 'Edit Simple RCON',
         'manage_roles' => 'Manage Roles',
         'logs' => 'Logs'

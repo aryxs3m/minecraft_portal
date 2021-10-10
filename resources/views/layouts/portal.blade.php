@@ -56,7 +56,7 @@
                         @can('admin.rcon.simple')
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="/admin/rcon-simple">
-                                {{ __('menu.admin.rcon_simple') }}
+                                {{ __('menu.admin.rcon') }}
                             </a>
                         </li>
                         @endcan

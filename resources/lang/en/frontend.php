@@ -54,7 +54,8 @@ return [
         'simple_rcon' => [
             'commands' => 'Commands',
             'kick' => 'Kick',
-            'manage_commands' => 'Manage Commands'
+            'manage_commands' => 'Manage Commands',
+            'terminal' => 'Terminal'
         ]
     ],
 

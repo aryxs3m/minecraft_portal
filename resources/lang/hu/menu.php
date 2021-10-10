@@ -18,8 +18,9 @@ return [
     'passwordchange' => 'Jelszócsere',
     'admin' => [
         'players' => 'Játékosok',
+        'rcon' => 'RCON',
         'rcon_simple' => 'RCON (Egyszerűsített)',
-        'rcon_expert' => 'RCON (Haladó)',
+        'rcon_expert' => 'RCON Terminál',
         'rcon_edit_simple' => 'Egyszerűsített RCON beállítások',
         'manage_roles' => 'Szerepkörök kezelése',
         'logs' => 'Naplók'

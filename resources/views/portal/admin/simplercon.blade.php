@@ -1,7 +1,48 @@
 @extends('layouts.portal')
 
+@push('head')
+    @can('admin.rcon.expert')
+    <link href="https://unpkg.com/jquery.terminal/css/jquery.terminal.min.css" rel="stylesheet"/>
+    @endcan
+@endpush
+
+@push('script')
+    @can('admin.rcon.expert')
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script>
+    <script>
+        jQuery(function($, undefined) {
+            let term = $('#terminal').terminal(function(command) {
+                let terminal = this;
+                if (command !== '') {
+                    $.ajax({
+                        url: '/admin/rcon-terminal',
+                        data: {
+                            command: command
+                        },
+                        success: function(result){
+                            terminal.echo('[[;lightgray;]' + String(result.message));
+                        },
+                        error: function (error){
+                            console.log(error);
+                            terminal.error(`${error.status} ${error.statusText} ${error.responseJSON.message}`);
+                        }
+                    })
+                }
+            }, {
+                greetings: 'Remote RCON Terminal',
+                name: 'rcon',
+                height: 400,
+                width: '100%',
+                prompt: 'RCON> '
+            });
+        });
+    </script>
+    @endcan
+@endpush
+
 @section('content')
-    <x-portal-header name="{{ __('menu.admin.rcon_simple') }}"></x-portal-header>
+    <x-portal-header name="{{ __('menu.admin.rcon') }}"></x-portal-header>
 
 
     @if(session('error'))
@@ -62,6 +103,17 @@
             </div>
         </div>
     </div>
+
+    @can('admin.rcon.expert')
+    <div class="card mt-3">
+        <div class="card-body">
+            <div class="card-title">
+                <h5 class="m-0">{{ __('frontend.admin.simple_rcon.terminal') }}</h5>
+            </div>
+            <div id="terminal"></div>
+        </div>
+    </div>
+    @endcan
 
 
 @endsection

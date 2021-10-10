@@ -29,7 +29,7 @@ return [
         ],
         'rcon' => [
             'simple' => 'RCON (Simple)',
-            'expert' => 'RCON (Expert)',
+            'expert' => 'RCON Terminal',
             'edit_simple' => 'Edit Simple RCON'
         ],
         'users' => [

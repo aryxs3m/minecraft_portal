@@ -54,7 +54,8 @@ return [
     'simple_rcon' => [
         'commands' => 'Parancsok',
         'kick' => 'Kirúgás',
-        'manage_commands' => 'Parancsok kezelése'
+        'manage_commands' => 'Parancsok kezelése',
+        'terminal' => 'Terminál'
     ]
 ]
 ];

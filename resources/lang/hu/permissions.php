@@ -29,7 +29,7 @@ return [
         ],
         'rcon' => [
             'simple' => 'RCON (Egyszerű)',
-            'expert' => 'RCON (Haladó)',
+            'expert' => 'RCON Terminál',
             'edit_simple' => 'Egyszerű RCON parancsok szerkesztése'
         ],
         'users' => [

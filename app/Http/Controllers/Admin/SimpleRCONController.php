@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Helpers\RCONTerminalParser;
 use App\Http\Controllers\Controller;
 use App\Models\AuthMeUser;
 use App\Models\SimpleRCONElement;
@@ -16,6 +17,17 @@ class SimpleRCONController extends Controller
             'commands' => SimpleRCONElement::all(),
             'players' => AuthMeUser::where('isLogged', true)->get()
         ]);
+    }
+
+    public function terminal(Request $request, MinecraftService $minecraftService)
+    {
+        $validated = $request->validate([
+            'command' => 'required|string|min:1',
+        ]);
+
+        return ["message" =>
+            RCONTerminalParser::convert($minecraftService->sendRCON($validated['command']))
+        ];
     }
 
     public function send(Request $request, MinecraftService $minecraftService)

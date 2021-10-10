@@ -14,15 +14,19 @@ Laravel 8 web application for your users and OPs.
 - Player administration
 - Assign roles/permission to users
 - Simple RCON with pre-defined commands and to kick players
+- RCON terminal with Minecraft color/format code support
 - Logging for Models and sent RCON commands
 - Multilingual (english and hungarian, easily translatable)
 
 ## Planned Features
-- Expert RCON terminal
 - Web installer/updater
 
 
 ## How To Use
+
+> Warning! This project relies on AuthMe MySQL tables (AuthMe default configuration) for authentication.
+> You NEED AuthMe for this project to work, there are no migrations for these tables in this project.
+
 - clone repository
 - `composer install`
 - `chmod +x storage`
