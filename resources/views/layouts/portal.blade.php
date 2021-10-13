@@ -41,7 +41,7 @@
                         </li>
                     </ul>
 
-                    @canany('admin.players.list','admin.rcon.simple','admin.rcon.expert','admin.users.manage_roles','admin.users.roles.edit','admin.rcon.edit_simple','admin.logs')
+                    @canany('admin.players.list','admin.rcon.simple','admin.rcon.expert','admin.users.manage_roles','admin.users.roles.edit','admin.rcon.edit_simple','admin.logs','admin.monitor')
                     <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
                         <span>{{ __('menu.groups.admin') }}</span>
                     </h6>
@@ -94,6 +94,13 @@
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="/admin/logs">
                                 {{ __('menu.admin.logs') }}
+                            </a>
+                        </li>
+                        @endcan
+                        @can('admin.monitor')
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/admin/monitor">
+                                {{ __('menu.admin.monitoring') }}
                             </a>
                         </li>
                         @endcan

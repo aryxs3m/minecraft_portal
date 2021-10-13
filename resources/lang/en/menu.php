@@ -23,7 +23,8 @@ return [
         'rcon_expert' => 'RCON Terminal',
         'rcon_edit_simple' => 'Edit Simple RCON',
         'manage_roles' => 'Manage Roles',
-        'logs' => 'Logs'
+        'logs' => 'Logs',
+        'monitoring' => 'Monitoring'
     ],
     'groups' => [
         'admin' => 'Admin'

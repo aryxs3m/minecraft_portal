@@ -1,10 +1,10 @@
 # Minecraft User and Admin Portal
 
-Laravel 8 web application for your users and OPs.
+Laravel 8 web panel for your Minecraft users and OPs.
 
 ![Screenshot](screenshot.png)
 
-## Current Features 
+## All Available Features 
 - AuthMe authentication, password change
 - Registration or invitation link only registration
 - SkinRestorer skin changer
@@ -16,6 +16,7 @@ Laravel 8 web application for your users and OPs.
 - Simple RCON with pre-defined commands and to kick players
 - RCON terminal with Minecraft color/format code support
 - Logging for Models and sent RCON commands
+- Server Monitoring (TPS, RAM, Ping, Online Players)
 - Multilingual (english and hungarian, easily translatable)
 
 ## Planned Features
@@ -34,6 +35,10 @@ Laravel 8 web application for your users and OPs.
 - edit `.env` (check below)
 - `php artisan key:gen`
 - `php artisan migrate`
+
+If you want to use the monitoring features you need a new crontab entry:
+
+`* * * * * cd /path-to-your-project && php artisan schedule:run >> /dev/null 2>&1`
 
 At the beginning, every user is guest, and only have access to skin change and password change.
 
@@ -56,11 +61,6 @@ Required settings:
 | SESSION_DRIVER | If you have Redis installed, set it to `redis`, otherwise `file` is okay |
 | APP_LOCALE | Application language. Currently `en` and `hu` is supported.
 | MINECRAFT_SERVER | Your Minecraft server's IP address or hostname |
-
-Extra settings:
-
-| Key | Description |
-| --- | ----------- |
 | MINECRAFT_QUERY_PORT | Your Minecraft server's port |
 | MINECRAFT_RCON_PORT | RCON port |
 | MINECRAFT_RCON_PASSWORD | RCON password |

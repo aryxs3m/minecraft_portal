@@ -74,6 +74,7 @@ Route::middleware('auth')->group(function(){
         Route::get('/rcon-terminal', [\App\Http\Controllers\Admin\SimpleRCONController::class, 'terminal'])->middleware('can:admin.rcon.expert');
         Route::post('/rcon-simple/command', [\App\Http\Controllers\Admin\SimpleRCONController::class, 'send'])->middleware('can:admin.rcon.simple');
         Route::post('/rcon-simple/kick', [\App\Http\Controllers\Admin\SimpleRCONController::class, 'kick'])->middleware('can:admin.rcon.simple');
+        Route::get('/monitor', [\App\Http\Controllers\Admin\MonitoringController::class, 'test'])->middleware('can:admin.monitor');
 
         Route::get('/logs', [\App\Http\Controllers\Admin\LogsController::class, 'index'])->middleware('can:admin.logs');
     });

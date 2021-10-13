@@ -35,6 +35,7 @@ return [
         'users' => [
             'manage_roles' => 'Jogosultságok kiosztása'
         ],
-        'logs' => 'Napló olvasása'
+        'logs' => 'Napló olvasása',
+        'monitor' => 'Monitoring'
     ]
 ];

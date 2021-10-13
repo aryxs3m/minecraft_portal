@@ -23,7 +23,8 @@ return [
         'rcon_expert' => 'RCON Terminál',
         'rcon_edit_simple' => 'Egyszerűsített RCON beállítások',
         'manage_roles' => 'Szerepkörök kezelése',
-        'logs' => 'Naplók'
+        'logs' => 'Naplók',
+        'monitoring' => 'Monitoring'
     ],
     'groups' => [
         'admin' => 'Admin'

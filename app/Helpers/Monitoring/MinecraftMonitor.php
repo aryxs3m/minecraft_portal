@@ -27,7 +27,14 @@ class MinecraftMonitor
     {
         $minecraftService = new MinecraftService();
         $reply = $minecraftService->sendRCON("tps");
-        $this->storeTPSLog($this->parseTPS($reply));
+        $check = $minecraftService->check();
+        $this->storeTPSLog(array_merge(
+            $this->parseTPS($reply),
+            [
+                'online' => $check->players,
+                'ping' => $check->ping
+            ]
+        ));
     }
 
     private function storeTPSLog($parsedTPS)

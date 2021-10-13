@@ -56,6 +56,23 @@ return [
             'kick' => 'Kick',
             'manage_commands' => 'Manage Commands',
             'terminal' => 'Terminal'
+        ],
+        'monitoring' => [
+            'tps' => 'TPS',
+            'server_ticks_per_seconds' => 'Server ticks/seconds',
+            'memory' => 'Memory',
+            'ram_usage' => 'RAM Usage',
+            '1_min' => '1 min',
+            '5_min' => '5 min',
+            '15_min' => '15 min',
+            'used_memory' => 'Used Memory',
+            'all_memory' => 'All Memory',
+            'ping' => 'Ping',
+            'ping_in_ms' => 'Ping in milliseconds',
+            'players' => 'Players',
+            'online_players' => 'Number of online players',
+            'warning_no_schedule' => "No monitor data found. Refresh after 1 minute. If you still don't see data, check your crontab!",
+            'warning_tps' => 'Warning! Low TPS detected! Your server may lagging!'
         ]
     ],
 

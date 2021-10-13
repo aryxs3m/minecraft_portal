@@ -35,6 +35,7 @@ return [
         'users' => [
             'manage_roles' => 'Manage Roles'
         ],
-        'logs' => 'Read logs'
+        'logs' => 'Read logs',
+        'monitor' => 'Monitoring'
     ]
 ];
