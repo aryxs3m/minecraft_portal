@@ -48,23 +48,23 @@ To give your user an admin role, execute this command: `php artisan mcp:add_admi
 
 Required settings:
 
-| Key | Description |
-| --- | ----------- |
-| APP_NAME | Used in the HTML title, header, login page. Probably your Minecraft server name |
-| APP_DEBUG | **ALWAYS** false on production servers! |
-| DB_HOST | MySQL server IP |
-| DB_PORT | MySQL server port |
-| DB_DATABASE | MySQL database (where AuthMe and SkinRestorer tables are) |
-| DB_USERNAME | MySQL username |
-| DB_PASSWORD | MySQL password |
-| CACHE_DRIVER | If you have Redis installed, set it to `redis`, otherwise `file` is okay |
-| SESSION_DRIVER | If you have Redis installed, set it to `redis`, otherwise `file` is okay |
-| APP_LOCALE | Application language. Currently `en` and `hu` is supported.
-| MINECRAFT_SERVER | Your Minecraft server's IP address or hostname |
-| MINECRAFT_QUERY_PORT | Your Minecraft server's port |
-| MINECRAFT_RCON_PORT | RCON port |
-| MINECRAFT_RCON_PASSWORD | RCON password |
-| MINECRAFT_RCON_TIMEOUT | RCON timeout |
+| Key | Description | Default |
+| --- | ----------- | ------- |
+| APP_NAME | Used in the HTML title, header, login page. Probably your Minecraft server name | Your Server Name |
+| APP_DEBUG | **ALWAYS** false on production servers! | false |
+| DB_HOST | MySQL server IP | 127.0.0.1 |
+| DB_PORT | MySQL server port | 3306 |
+| DB_DATABASE | MySQL database (where AuthMe and SkinRestorer tables are) | laravel |
+| DB_USERNAME | MySQL username | root |
+| DB_PASSWORD | MySQL password | |
+| APP_LOCALE | Application language. Currently `en` and `hu` is supported. | en |
+| MINECRAFT_SERVER | Your Minecraft server's IP address or hostname | 127.0.0.1 |
+| MINECRAFT_QUERY_PORT | Your Minecraft server's port | 25565 |
+| MINECRAFT_RCON_PORT | RCON port | 25575 |
+| MINECRAFT_RCON_PASSWORD | RCON password | |
+| MINECRAFT_RCON_TIMEOUT | RCON timeout | 10 |
+| APP_OPEN_REGISTRATION | If true, people can register a new user without invitation | false |
+| MONITORING_CLEAN_AFTER | Daily cleanup will remove this many days old monitoring data | 30 |
 
 ## Thanks for checking this out!
 

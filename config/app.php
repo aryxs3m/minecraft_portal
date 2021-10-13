@@ -231,6 +231,7 @@ return [
 
     ],
 
-    'open_registration' => env('APP_OPEN_REGISTRATION', false)
+    'open_registration' => env('APP_OPEN_REGISTRATION', false),
+    'monitoring_clear_after' => env('MONITORING_CLEAN_AFTER', 30),
 
 ];
