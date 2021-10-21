@@ -26,7 +26,7 @@ trait EloquentChart
                 ->latest()
                 ->limit($limit)
                 ->pluck($dimension)
-                ->map(function(Carbon $m) use($timeFormat) {
+                ->map(function (Carbon $m) use ($timeFormat) {
                     return $m->format($timeFormat);
                 })
                 ->toArray()

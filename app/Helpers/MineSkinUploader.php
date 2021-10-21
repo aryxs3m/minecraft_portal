@@ -10,15 +10,16 @@ use Illuminate\Http\UploadedFile;
  */
 abstract class MineSkinUploader
 {
-
     public static function upload(int $type, UploadedFile $skinFile)
     {
         $postparams = [
             'visibility' => 0,
             'model' => ($type == 1) ? '' : 'slim',
-            'file' => new CURLFile($skinFile->getPathname(),
-                                   $skinFile->getMimeType(),
-                                   $skinFile->getFilename())
+            'file' => new CURLFile(
+                $skinFile->getPathname(),
+                $skinFile->getMimeType(),
+                $skinFile->getFilename()
+            )
         ];
 
         $ch = curl_init();
@@ -29,7 +30,7 @@ abstract class MineSkinUploader
         curl_setopt($ch, CURLOPT_POSTFIELDS, $postparams);
         $response = curl_exec($ch);
         curl_close($ch);
-        if($response == false){
+        if ($response == false) {
             throw new \Exception(__('frontend.skinchange.error_upload'));
         }
 

@@ -45,8 +45,7 @@ abstract class RCONTerminalParser
     {
         $output = $minecraftText;
 
-        foreach(self::$codeTable as $minecraftCode => $ansiCode)
-        {
+        foreach (self::$codeTable as $minecraftCode => $ansiCode) {
             $output = str_replace(
                 self::$inputPrefix . $minecraftCode . self::$inputSuffix,
                 self::$outputPrefix . $ansiCode . self::$outputSuffix,

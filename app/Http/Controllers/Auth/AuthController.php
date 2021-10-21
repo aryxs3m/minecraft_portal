@@ -9,33 +9,27 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController
 {
-    function loginForm()
+    public function loginForm()
     {
-        if (Auth::check())
-        {
+        if (Auth::check()) {
             return redirect()->to('/');
-        }
-        else
-        {
+        } else {
             return view('auth.login');
         }
     }
 
-    function loginPost(Request $request)
+    public function loginPost(Request $request)
     {
         $validated = $request->validate([
             'username' => 'required|string|min:1|max:255',
             'password' => 'required|string|min:1|max:255'
         ]);
 
-        if (Auth::attempt($validated))
-        {
+        if (Auth::attempt($validated)) {
             $request->session()->regenerate();
 
             return redirect()->to('/');
-        }
-        else
-        {
+        } else {
             return redirect()->back()->with('error', __('auth.failed'));
         }
     }

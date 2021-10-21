@@ -14,5 +14,4 @@ class LogsController extends Controller
         $logs = Activity::all();
         return view('portal.admin.logs', compact('logs'));
     }
-
 }

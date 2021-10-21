@@ -13,7 +13,7 @@ use MCServerStatus\MCPing;
 
 class DashboardController
 {
-    function index(MinecraftService $minecraftService)
+    public function index(MinecraftService $minecraftService)
     {
         return view('portal.index', [
             'serverInfo' => $minecraftService->check(),

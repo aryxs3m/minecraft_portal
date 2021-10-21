@@ -44,8 +44,7 @@ class MonitorCommand extends Command
             $mm = new MinecraftMonitor(new EloquentDataHandler(MonitorData::class));
             $mm->log();
             return 0;
-        } catch (\Exception $exception)
-        {
+        } catch (\Exception $exception) {
             return 1;
         }
     }

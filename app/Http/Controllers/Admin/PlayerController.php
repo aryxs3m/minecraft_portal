@@ -16,7 +16,7 @@ class PlayerController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function index()
     {
@@ -34,7 +34,7 @@ class PlayerController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function create()
     {
@@ -45,7 +45,7 @@ class PlayerController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
@@ -67,7 +67,7 @@ class PlayerController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\AuthMeUser $authMeUser
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function show(AuthMeUser $authMeUser)
     {
@@ -78,7 +78,7 @@ class PlayerController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\AuthMeUser $authMeUser
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function edit(AuthMeUser $authMeUser)
     {
@@ -90,7 +90,7 @@ class PlayerController extends Controller
      *
      * @param  \Illuminate\Http\Request $request
      * @param  \App\Models\AuthMeUser $authMeUser
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, AuthMeUser $authMeUser)
     {
@@ -109,7 +109,7 @@ class PlayerController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\AuthMeUser $authMeUser
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function editRoles(AuthMeUser $authMeUser)
     {
@@ -126,22 +126,19 @@ class PlayerController extends Controller
      *
      * @param  \Illuminate\Http\Request $request
      * @param  \App\Models\AuthMeUser $authMeUser
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function updateRoles(Request $request, AuthMeUser $authMeUser)
     {
         $roles = [];
         $permissions = [];
 
-        foreach($request->all() as $key => $value)
-        {
-            if (Str::startsWith($key, 'role_'))
-            {
+        foreach ($request->all() as $key => $value) {
+            if (Str::startsWith($key, 'role_')) {
                 $roles[] = $value;
             }
 
-            if (Str::startsWith($key, 'permission_'))
-            {
+            if (Str::startsWith($key, 'permission_')) {
                 $permissions[] = $value;
             }
         }
@@ -156,7 +153,7 @@ class PlayerController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\AuthMeUser $authMeUser
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(AuthMeUser $authMeUser)
     {

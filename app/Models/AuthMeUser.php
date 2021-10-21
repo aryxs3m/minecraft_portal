@@ -2,15 +2,25 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Activitylog\Traits\LogsActivity;
 use Spatie\Permission\Traits\HasRoles;
 
-
+/**
+ * AuthMeUser
+ *
+ * @property string $username
+ * @property string $email
+ * @property string realname
+ * @property Player $player
+ */
 class AuthMeUser extends Authenticatable
 {
-    use Notifiable, HasRoles, LogsActivity;
+    use Notifiable;
+    use HasRoles;
+    use LogsActivity;
 
     protected $table = "authme";
 
@@ -37,7 +47,7 @@ class AuthMeUser extends Authenticatable
         'password',
     ];
 
-    public function player()
+    public function player(): HasOne
     {
         return $this->hasOne(Player::class, 'Nick', 'username');
     }

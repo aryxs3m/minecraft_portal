@@ -9,6 +9,7 @@
         "ext-curl": "*",
         "ext-json": "*",
         "arielmejiadev/larapex-charts": "^3.0",
+        "friendsofphp/php-cs-fixer": "^3.2",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.54",

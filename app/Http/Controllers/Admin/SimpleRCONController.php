@@ -40,13 +40,11 @@ class SimpleRCONController extends Controller
 
         try {
             $message = $minecraftService->sendRCON($command->value);
-            if (empty($message))
-            {
+            if (empty($message)) {
                 $message = "OK.";
             }
             return redirect()->back()->with('success', $message);
-        } catch (\Exception $exception)
-        {
+        } catch (\Exception $exception) {
             return redirect()->back()->with('error', $exception->getMessage());
         }
     }
@@ -61,13 +59,11 @@ class SimpleRCONController extends Controller
 
         try {
             $message = $minecraftService->sendRCON($command);
-            if (empty($message))
-            {
+            if (empty($message)) {
                 $message = "OK.";
             }
             return redirect()->back()->with('success', $message);
-        } catch (\Exception $exception)
-        {
+        } catch (\Exception $exception) {
             return redirect()->back()->with('error', $exception->getMessage());
         }
     }

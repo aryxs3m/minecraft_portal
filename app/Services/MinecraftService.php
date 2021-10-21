@@ -11,12 +11,12 @@ class MinecraftService
 {
     public function check()
     {
-        return Cache::remember('mcservice', 60, function(){
+        return Cache::remember('mcservice', 60, function () {
             return MCPing::check(config('minecraft.server'), config('minecraft.query_port'));
         });
     }
 
-    public function sendRCON($command):string
+    public function sendRCON($command): string
     {
         $rcon = new Rcon(
             config('minecraft.server'),
@@ -25,8 +25,7 @@ class MinecraftService
             config('minecraft.rcon_timeout')
         );
 
-        if ($rcon->connect())
-        {
+        if ($rcon->connect()) {
             $rcon->sendCommand($command);
             if (Auth::check()) {
                 activity()
@@ -35,9 +34,7 @@ class MinecraftService
                     ->log('RCON sent: ' . $command);
             }
             return trim($rcon->getResponse());
-        }
-        else
-        {
+        } else {
             throw new \Exception("Cannot connect to RCON. Check .env parameters!");
         }
     }

@@ -26,9 +26,8 @@ class SkinData
             if (isset($this->raw->textures->SKIN->metadata)) {
                 $this->type = $this->raw->textures->SKIN->metadata->model;
             }
-        } catch (\Exception $exception)
-        {
-            throw new \Exception("Ismeretlen felépítésű SkinRestore adat: " + $skinValue);
+        } catch (\Exception $exception) {
+            throw new \Exception("Ismeretlen felépítésű SkinRestore adat: $skinValue");
         }
     }
 }

@@ -39,8 +39,7 @@ class MinecraftMonitor
 
     private function storeTPSLog($parsedTPS)
     {
-        foreach($parsedTPS as $measure => $value)
-        {
+        foreach ($parsedTPS as $measure => $value) {
             $this->dataHandler->writeData($measure, $value);
         }
     }
@@ -62,8 +61,7 @@ class MinecraftMonitor
     private function parseTPSValue($stringValue, $type)
     {
         $outputString = preg_replace('/[^0-9.]/', '', $stringValue);
-        switch ($type)
-        {
+        switch ($type) {
             case self::VALUE_TYPE_FLOAT: return floatval($outputString);
             case self::VALUE_TYPE_INTEGER: return intval($outputString);
             default: return $outputString;

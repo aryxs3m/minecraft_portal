@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class MonitorData extends Model
 {
-    use HasFactory, EloquentChart;
+    use HasFactory;
+    use EloquentChart;
 
     protected $fillable = [
         'measure', 'value'

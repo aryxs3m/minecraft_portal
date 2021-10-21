@@ -16,7 +16,7 @@ abstract class SkinRestorer
         $username = Auth::user()->username;
         $transformedName = ' ' . $username;
 
-        if(empty($mineSkinResponse['data']['texture']['value']) || empty($mineSkinResponse['data']['texture']['signature'])){
+        if (empty($mineSkinResponse['data']['texture']['value']) || empty($mineSkinResponse['data']['texture']['signature'])) {
             throw new \Exception(__('frontend.skinchange.error_mineskin'));
         }
 

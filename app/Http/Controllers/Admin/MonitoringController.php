@@ -15,7 +15,8 @@ use Illuminate\Http\Request;
 
 class MonitoringController extends Controller
 {
-    public function test(MonitorTPSChart $monitorTPSChart, MonitorRAMChart $monitorRAMChart, MonitorPingChart $monitorPingChart, MonitorPlayersChart $monitorPlayersChart) {
+    public function test(MonitorTPSChart $monitorTPSChart, MonitorRAMChart $monitorRAMChart, MonitorPingChart $monitorPingChart, MonitorPlayersChart $monitorPlayersChart)
+    {
         $lastData = MonitorData::where('measure', '=', 'tps_1m')->latest()->first();
 
         return view('portal.admin.monitor', [
@@ -28,11 +29,11 @@ class MonitoringController extends Controller
         ]);
     }
 
-    private function getData() {
-
+    private function getData()
+    {
     }
 
-    private function writeData() {
-
+    private function writeData()
+    {
     }
 }

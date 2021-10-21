@@ -14,12 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    if (\Illuminate\Support\Facades\Auth::check())
-    {
+    if (\Illuminate\Support\Facades\Auth::check()) {
         return redirect()->to('/home');
-    }
-    else
-    {
+    } else {
         return redirect()->to('/login');
     }
 });
@@ -33,8 +30,8 @@ Route::post('/register', [\App\Http\Controllers\Auth\RegistrationController::cla
 Route::get('/invite', [\App\Http\Controllers\Auth\RegistrationController::class, 'invite'])->middleware('signed')->name('invite');
 Route::post('/invite', [\App\Http\Controllers\Auth\RegistrationController::class, 'postInvite'])->middleware('signed');
 
-Route::middleware('auth')->group(function(){
-    Route::get('/logout', function (){
+Route::middleware('auth')->group(function () {
+    Route::get('/logout', function () {
         \Illuminate\Support\Facades\Auth::logout();
         return redirect()->to('/login');
     });
@@ -47,9 +44,8 @@ Route::middleware('auth')->group(function(){
     Route::get('/password-change', [\App\Http\Controllers\Portal\PasswordController::class, 'passwordChange']);
     Route::post('/password-change', [\App\Http\Controllers\Portal\PasswordController::class, 'passwordChangePost']);
 
-    Route::prefix("/admin")->group(function(){
-
-        Route::prefix('/players')->group(function(){
+    Route::prefix("/admin")->group(function () {
+        Route::prefix('/players')->group(function () {
             Route::get('/', [\App\Http\Controllers\Admin\PlayerController::class, 'index'])->middleware('can:admin.players.list');
             Route::get('/create', [\App\Http\Controllers\Admin\PlayerController::class, 'create'])->middleware('can:admin.players.create');
             Route::get('/edit/{authMeUser}', [\App\Http\Controllers\Admin\PlayerController::class, 'edit'])->middleware('can:admin.players.modify');
@@ -61,7 +57,7 @@ Route::middleware('auth')->group(function(){
             Route::post('/invite', [\App\Http\Controllers\Admin\PlayerController::class, 'invite'])->middleware('can:admin.players.invite');
         });
 
-        Route::prefix('/rcon-edit-simple')->middleware('can:admin.rcon.edit_simple')->group(function(){
+        Route::prefix('/rcon-edit-simple')->middleware('can:admin.rcon.edit_simple')->group(function () {
             Route::get('/', [\App\Http\Controllers\Admin\RCONEditController::class, 'index']);
             Route::get('/create', [\App\Http\Controllers\Admin\RCONEditController::class, 'create']);
             Route::get('/edit/{simpleRCONElement}', [\App\Http\Controllers\Admin\RCONEditController::class, 'edit']);

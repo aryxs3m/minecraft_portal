@@ -12,8 +12,7 @@ class RegistrationController extends Controller
 {
     public function register()
     {
-        if (!config('app.open_registration'))
-        {
+        if (!config('app.open_registration')) {
             return redirect()->to('/login');
         }
         return view('auth.register', ['invite' => false]);
@@ -26,7 +25,9 @@ class RegistrationController extends Controller
 
     public function postRegister(Request $request)
     {
-        if (!config('app.open_registration')) { return redirect()->to('/'); }
+        if (!config('app.open_registration')) {
+            return redirect()->to('/');
+        }
         $this->registerUser($request);
         return redirect()->to('/home');
     }
