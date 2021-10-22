@@ -1,16 +1,12 @@
 @extends('layouts.html')
 
-@push('head')
-    <link href="/assets/styles/dashboard.css" rel="stylesheet">
-@endpush
-
 @section('body')
-    <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="/home">{{ config('app.name') }}</a>
+    <header class="mcp navbar navbar-dark sticky-top bg-primary flex-md-nowrap p-0 shadow">
+        <a class="mcp navbar-brand col-md-3 col-lg-2 me-0 px-3" href="/home">{{ config('app.name') }}</a>
         <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="navbar-nav">
+        <div class="navbar-nav d-none d-md-block">
             <div class="nav-item text-nowrap">
                 <a class="nav-link px-3" href="/logout">{{ __('auth.logout') }}</a>
             </div>
@@ -19,7 +15,7 @@
 
     <div class="container-fluid">
         <div class="row">
-            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse px-0">
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
                         <li class="nav-item">
@@ -106,6 +102,14 @@
                         @endcan
                     </ul>
                     @endcanany
+
+                    <ul class="nav flex-column mt-3 d-block d-md-none">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/logout">
+                                {{ __('auth.logout') }}
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </nav>
 

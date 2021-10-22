@@ -12,10 +12,10 @@
     <table id="crudTable" class="table table-hover">
         <thead>
         <tr>
-           <th>id</th>
-           <th>value</th>
-           <th>created_at</th>
-           <th>updated_at</th>
+           <th>{{ __("frontend.crud_labels.id") }}</th>
+           <th>{{ __("frontend.crud_labels.value") }}</th>
+           <th>{{ __("frontend.crud_labels.created_at") }}</th>
+           <th>{{ __("frontend.crud_labels.updated_at") }}</th>
            <th></th>
         </tr>
         </thead>

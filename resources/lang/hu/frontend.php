@@ -43,7 +43,7 @@ return [
         'edit_rcon_command' => 'RCON parancs szerkesztése',
         'edit-roles' => 'Jogok',
         'roles' => 'Szerepkörök',
-        'permissions' => 'Jogosultásgok',
+        'permissions' => 'Jogosultságok',
         'fields' => [
             'email' => 'E-mail',
             'command' => 'Parancs'
@@ -74,5 +74,25 @@ return [
             'warning_no_schedule' => "Nem érkezett adat. Ha 1 perc múlva is üresek a grafikonok, ellenőrizd, hogy megfelelően beállítottad-e a crontabot!",
             'warning_tps' => 'Figyelem! Alacsony a TPS! A szerver laggolhat!'
         ]
+    ],
+
+    'permissions' => [
+        'user.skin.change' => 'Skin change'
+    ],
+
+    'crud_labels' => [
+        'id' => 'ID',
+        'username' => 'Felhasználó',
+        'email' => 'E-mail',
+        'ip' => 'IP',
+        'admin' => 'Admin',
+        'value' => 'Érték',
+        'created_at' => 'Létrehozás',
+        'updated_at' => 'Frissítés',
+        'datetime' => 'Idő',
+        'log' => 'Típus',
+        'user' => 'Felhasználó',
+        'model' => 'Mit',
+        'description' => 'Részletek'
     ]
 ];

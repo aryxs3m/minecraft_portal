@@ -77,6 +77,22 @@ return [
     ],
 
     'permissions' => [
-        'user.skin.change' => 'Skincsere'
+        'user.skin.change' => 'Skin change'
+    ],
+
+    'crud_labels' => [
+        'id' => 'ID',
+        'username' => 'Username',
+        'email' => 'E-mail',
+        'ip' => 'IP',
+        'admin' => 'Admin',
+        'value' => 'Value',
+        'created_at' => 'Created at',
+        'updated_at' => 'Updated at',
+        'datetime' => 'Timestamp',
+        'log' => 'Type',
+        'user' => 'User',
+        'model' => 'Which',
+        'description' => 'Description'
     ]
 ];

@@ -1,0 +1,15 @@
+// Bootstrap variables
+@import "variables.scss";
+
+// Bootstrap
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+@import "styles/bigswitch.scss";
+
+// Minecraft Portal Styles
+@import "styles/dashboard.scss";
+@import "styles/signin.css";
+@import "styles/crud.css";
+
+// Assets
+@import "assets/minecraft-skinviewer.css";

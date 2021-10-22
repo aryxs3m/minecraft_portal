@@ -1,0 +1,8 @@
+#crudTable form,
+.toolbar form {
+    display:inline;
+}
+
+#crudTable td {
+    vertical-align: middle;
+}

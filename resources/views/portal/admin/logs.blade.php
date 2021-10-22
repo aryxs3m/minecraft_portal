@@ -8,11 +8,11 @@
     <table id="crudTable" class="table table-hover">
         <thead>
         <tr>
-           <th>datetime</th>
-           <th>log</th>
-           <th>user</th>
-           <th>model</th>
-           <th>description</th>
+           <th>{{ __("frontend.crud_labels.datetime") }}</th>
+           <th>{{ __("frontend.crud_labels.log") }}</th>
+           <th>{{ __("frontend.crud_labels.user") }}</th>
+           <th>{{ __("frontend.crud_labels.model") }}</th>
+           <th>{{ __("frontend.crud_labels.description") }}</th>
         </tr>
         </thead>
         <tbody>

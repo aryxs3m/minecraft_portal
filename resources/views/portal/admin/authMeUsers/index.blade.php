@@ -5,7 +5,7 @@
 @section('content')
     <x-portal-header name="{{ __('menu.admin.players') }}"></x-portal-header>
 
-    <div class="mb-3">
+    <div class="mb-3 toolbar">
         @can('admin.players.create')
         <a href="/admin/players/create" class="btn btn-primary">{{ __('frontend.admin.create') }}</a>
         @endcan
@@ -21,11 +21,11 @@
     <table id="crudTable" class="table table-hover">
         <thead>
         <tr>
-           <th>id</th>
-           <th>username</th>
-           <th>email</th>
-           <th>ip</th>
-           <th>admin</th>
+           <th>{{ __("frontend.crud_labels.id") }}</th>
+           <th>{{ __("frontend.crud_labels.username") }}</th>
+           <th>{{ __("frontend.crud_labels.email") }}</th>
+           <th>{{ __("frontend.crud_labels.ip") }}</th>
+           <th>{{ __("frontend.crud_labels.admin") }}</th>
            <th></th>
         </tr>
         </thead>

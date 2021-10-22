@@ -8,7 +8,6 @@
 
 @push('script')
     @can('admin.rcon.expert')
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script>
     <script>
         jQuery(function($, undefined) {
@@ -57,7 +56,7 @@
         </p>
     @endif
 
-    <div class="row">
+    <div class="row row-cols-1 row-cols-md-2">
         <div class="col">
             <div class="card mb-3">
                 <div class="card-body">
