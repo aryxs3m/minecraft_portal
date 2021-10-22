@@ -2,7 +2,7 @@
 
 Laravel 8 web panel for your Minecraft users and OPs.
 
-![Screenshot](screenshot.png)
+![Screenshot](screenshot-1.png)
 
 ## All Available Features 
 - AuthMe authentication, password change
