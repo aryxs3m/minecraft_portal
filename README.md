@@ -26,7 +26,8 @@ Laravel 8 web panel for your Minecraft users and OPs.
 ## How To Use
 
 > Warning! This project relies on AuthMe MySQL tables (AuthMe default configuration) for authentication.
-> You NEED AuthMe for this project to work, there are no migrations for these tables in this project.
+> You NEED AuthMe for this project to work, there are no migrations for these tables in this project. Don't forget to
+> set AuthMe to use BCRYPT encryption!
 
 > Warning! If you want to use the SkinRestorer skin changer, you need to configure SkinRestorer first - the
 > plugin creates the necessary tables itself!
