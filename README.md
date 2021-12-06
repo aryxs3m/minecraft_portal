@@ -28,6 +28,9 @@ Laravel 8 web panel for your Minecraft users and OPs.
 > Warning! This project relies on AuthMe MySQL tables (AuthMe default configuration) for authentication.
 > You NEED AuthMe for this project to work, there are no migrations for these tables in this project.
 
+> Warning! If you want to use the SkinRestorer skin changer, you need to configure SkinRestorer first - the
+> plugin creates the necessary tables itself!
+
 - clone repository
 - `composer install`
 - `chmod +x storage`
@@ -65,6 +68,8 @@ Required settings:
 | MINECRAFT_RCON_TIMEOUT | RCON timeout | 10 |
 | APP_OPEN_REGISTRATION | If true, people can register a new user without invitation | false |
 | MONITORING_CLEAN_AFTER | Daily cleanup will remove this many days old monitoring data | 30 |
+
+**Note:** database session doesn't supported!
 
 ## Thanks for checking this out!
 
