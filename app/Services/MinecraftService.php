@@ -12,7 +12,7 @@ class MinecraftService
     public function check()
     {
         return Cache::remember('mcservice', 60, function () {
-            return MCPing::check(config('minecraft.server'), config('minecraft.query_port'));
+            return MCPing::check(config('minecraft.server'), (int) config('minecraft.query_port'));
         });
     }
 
@@ -20,7 +20,7 @@ class MinecraftService
     {
         $rcon = new Rcon(
             config('minecraft.server'),
-            config('minecraft.rcon_port'),
+            (int) config('minecraft.rcon_port'),
             config('minecraft.rcon_password'),
             config('minecraft.rcon_timeout')
         );
